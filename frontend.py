@@ -8,8 +8,8 @@ from openai import OpenAI
 
 # 🔑 Load API key
 load_dotenv()
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-
+#client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 INDEX_FILE = "docs.index"
 META_FILE = "metadata.pkl"
 
