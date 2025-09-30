@@ -37,8 +37,8 @@ def embed(texts):
     return [e.embedding for e in response.data]
 
 # --------- Streamlit UI ---------
-st.title("📄 Q&A with GPT")
-st.write("Ask questions about the embedded PDFs.")
+st.title("📄 ScriptBot")
+st.write("Ask about your scripts")
 
 question = st.text_area("Enter your question:", height=120)
 
@@ -55,7 +55,7 @@ if st.button("Ask GPT"):
             context = "\n\n".join([r[2] for r in results])
 
             # Build prompt
-            prompt = f"Context:\n{context}\n\nQuestion: {question}\nAnswer concisely:"
+            prompt = f"Context:\n{context}\n\nQuestion: {question}\nAnswer creatively and in detail:"
 
             response = client.chat.completions.create(
                 model="gpt-4.1-mini",
