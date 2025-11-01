@@ -44,6 +44,11 @@ def embed(texts):
     return [e.embedding for e in response.data]
 
 # ---------------- ENDPOINT: Retrieve Chunks ----------------
+@app.get("/")
+async def home():
+    """Simple health check endpoint."""
+    return {"message": " Retrieval API server is running!"}
+
 @app.post("/retrieve/")
 async def retrieve_relevant_chunks(
     query: str = Form(...),
